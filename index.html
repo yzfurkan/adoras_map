@@ -37,19 +37,13 @@ document.getElementById('file').onchange = function(){
       //console.log(lines[line]);
 	  
 		if(line %11 ==0 ){
-			console.log("GİRDİİİİİİİİİİ..")
-			console.log(lines[line])
-			console.log(lines[line+1])
 			var check_kirmizi_uyari = parseFloat(lines[line+10][0])
-			console.log(check_kirmizi_uyari)
-			console.log("--------------")
 			var str= "den"
 			var la = parseFloat(lines[line])
 			var lo = parseFloat(lines[line+1])
 			var newitem = [str, la, lo];
 			var speed = lines[line+4]
 			speeds.push(speed)
-			console.log(speeds[4])
 			locations.push(newitem);
 			
 			if(check_kirmizi_uyari == 1){
@@ -88,9 +82,7 @@ document.getElementById('file').onchange = function(){
 
 
     }
-	    console.log("heyyyyy")
-		console.log(lines[22])
-		console.log(lines[23])
+
 /*		for(i =0; i<locations.length; ++i){
 		  marker = new google.maps.Marker({
 			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
