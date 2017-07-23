@@ -38,11 +38,16 @@ document.getElementById('file').onchange = function(){
 	  
 		if(line %11 ==0 ){
 			var check_kirmizi_uyari = parseFloat(lines[line+10][0])
-			var str= "den"
+			var str= "den" + "men"
 			var la = parseFloat(lines[line])
 			var lo = parseFloat(lines[line+1])
 			var newitem = [str, la, lo];
 			var speed = lines[line+4]
+			var fren_anahtari = lines[line+5]
+			var fren_vanasi = lines[line+6]
+			var yon = lines[line+7]
+			var basinc = lines[line+8]
+
 			speeds.push(speed)
 			locations.push(newitem);
 			
@@ -66,7 +71,7 @@ document.getElementById('file').onchange = function(){
 		  marker = new google.maps.Marker({
 			position: new google.maps.LatLng(la, lo),
 			map: map,
-			title: speed
+			title: "Hız: " + speed + " FA: " + fren_anahtari + " FV: " + fren_vanasi + " Yön: " + yon + " Basınç: " + basinc
 		  });
 		  
 		/*        google.maps.event.addListener(marker, 'click', (function(marker, i) {
