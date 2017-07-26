@@ -33,47 +33,11 @@ document.getElementById('file').onchange = function(){
 
     // By lines
     var lines = this.result.split(',');
-	console.log(lines[13]); //lat
-	console.log(lines[14]); //long
-
-	console.log(lines[16]);
-	console.log(lines[17]);///
-
-	console.log(lines[18]);
-	console.log(lines[19]);
-	console.log(lines[20]);
-	console.log(lines[21]);
-	
-	console.log(lines[22]);
-	console.log(lines[23]); //ku
-	console.log(lines[24]); //su
-	console.log(lines[25]); //pu
-	console.log(lines[26]);
-	console.log(lines[27]);
-	console.log(lines[28]);
-	console.log(lines[29]);
-	console.log(lines[30]); ///
-	console.log(lines[31]);
-	console.log(lines[32]);
-	console.log(lines[33]);
-	console.log(lines[34]);
-	console.log(lines[35]);
-	console.log(lines[36]); //ku
-	console.log(lines[37]); //su
-	console.log(lines[38][0]); //pu
-
-	console.log(lines[43]); ///speed
-
-
-    for(var line = 13; line < lines.length; line=line+13){
+    for(var line = 22; line < lines.length; line=line+11){
       //console.log(lines[line]);
 	  
-		//if(line %11 ==0 ){
+		if(line %11 ==0 ){
 			var check_kirmizi_uyari = parseFloat(lines[line+10][0])
-			var check_sari_uyari = parseFloat(lines[line+11][0])
-			var check_pano_uyari = parseFloat(lines[line+12][0])
-
-
 			var str= "den" + "men"
 			var la = parseFloat(lines[line])
 			var lo = parseFloat(lines[line+1])
@@ -86,33 +50,15 @@ document.getElementById('file').onchange = function(){
 
 			speeds.push(speed)
 			locations.push(newitem);
-			//https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png
+			
 			if(check_kirmizi_uyari == 1){
-			   var image = 'https://i.hizliresim.com/vpARzm.jpg';
+			   var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
 				var beachMarker = new google.maps.Marker({
 				  position: new google.maps.LatLng(la, lo),
 				  map: map,
 				  icon: image
 			});
 				
-			}
-			if(check_sari_uyari == 1){
-
-			   var image = 'https://i.hizliresim.com/Pr2Bv6.jpg';
-				var beachMarker = new google.maps.Marker({
-				  position: new google.maps.LatLng(la, lo),
-				  map: map,
-				  icon: image
-			});
-			}
-			if(check_pano_uyari == 1){
-			   var image = 'https://i.hizliresim.com/bGZYQG.jpg';
-				var beachMarker = new google.maps.Marker({
-				  position: new google.maps.LatLng(la, lo),
-				  map: map,
-				  icon: image
-			});
-
 			}
 		/*	  marker = new google.maps.Marker({
 			position: new google.maps.LatLng(la, lo),
@@ -125,7 +71,7 @@ document.getElementById('file').onchange = function(){
 		  marker = new google.maps.Marker({
 			position: new google.maps.LatLng(la, lo),
 			map: map,
-			title: la+ ","+ lo+ " Hız: " + speed + " FA: " + fren_anahtari + " FV: " + fren_vanasi + " Yön: " + yon + " Basınç: " + basinc + " S: "+ check_sari_uyari + " P: "+ check_pano_uyari
+			title: "Hız: " + speed + " FA: " + fren_anahtari + " FV: " + fren_vanasi + " Yön: " + yon + " Basınç: " + basinc
 		  });
 		  
 		/*        google.maps.event.addListener(marker, 'click', (function(marker, i) {
@@ -135,7 +81,7 @@ document.getElementById('file').onchange = function(){
         }
       })(marker, i));
 	  */
-		//}
+		}
 		  
 		
 
